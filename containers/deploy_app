@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+docker build  -t siemonster/app app/ && (
+   RUNNING=$(docker inspect --format="{{ .State.Running }}" app 2> /dev/null)
+   if [ "$RUNNING" == "true" ]; then 
+    docker stop app && docker rm app
+   fi
+    docker run -itd --name app \
+        $ADDITIONAL_DOCKER_ARGS \
+        -v /opt/containers:/opt/containers:ro \
+        -v /opt/containers/app:/opt/containers/app \
+        -v /opt/containers/411:/opt/containers/411 \
+        -v /opt/containers/alerta-web:/opt/containers/alerta-web \
+        -v /opt/containers/health:/opt/containers/health \
+        -v /opt/containers/ir:/opt/containers/ir \
+        -v /opt/containers/minemeld:/opt/containers/minemeld \
+        -v /opt/containers/python_simplehttpserver:/opt/containers/python_simplehttpserver \
+        -v /opt/containers/reporting:/opt/containers/reporting \
+        -v /opt/containers/sm-kibana:/opt/containers/sm-kibana \
+        -v /opt/containers/splogtash:/opt/containers/splogtash \
+        -v /var/log/containers/app:/var/log \
+        siemonster/app
+)

@@ -1,0 +1,215 @@
+.SiemInit {
+
+}
+
+.siem-init-container {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  .siem-logo {
+    height: 10rem;
+  }
+}
+
+.siem-logo {
+  display: inline-block;
+  height: inherit;
+  img {
+    width: 90%;
+  }
+}
+
+.siem-logo-menu {
+  display: inline-block;
+  height: inherit;
+  float: left;
+  margin-right: 20px;
+  cursor: pointer;
+  img {
+    height: 90%;
+  }
+}
+
+.siem-top-panel {
+  height: 50px;
+  margin: 0;
+  background: #6fb14e;
+  width: 100%;
+  position: fixed;
+}
+
+.siem-menu-sublinks {
+  position: absolute;
+  background: #6fb14e;
+  left: 0;
+  display: none;
+  min-width: 16rem;
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 0 20px;
+    white-space: nowrap;
+    &.active {
+      color: #FFE66D !important;
+      font-weight: bold;
+    }
+    &:hover {
+      background-image: linear-gradient(#448424, #419441 40%, #51923f);
+      background-repeat: no-repeat;
+      filter: none;
+    }
+  }
+}
+
+.siem-link {
+  display: block;
+  padding: 0 20px;
+  float: left;
+  height: inherit;
+  position: relative;
+  line-height: 4.8rem;
+  a {
+    color: #F7FFF7;
+  }
+  &:hover {
+    background-image: linear-gradient(#448424, #419441 40%, #51923f);
+    background-repeat: no-repeat;
+    filter: none;
+    .siem-menu-sublinks {
+      display: block;
+    }
+  }
+  &.active {
+    font-weight: bold;
+    > a {
+      color: #FFE66D !important;
+    }
+  }
+}
+
+.logout-link {
+  float: right;
+  cursor: pointer;
+}
+
+.siem-page {
+  margin-top: 5px;
+  display: block;
+  width: 100vw;
+  height: calc(100vh - 75px);
+  iframe {
+    width: inherit;
+    height: inherit;
+    border: none;
+  }
+}
+
+.error {
+  color: red;
+}
+
+.auth {
+  text-align: center;
+  margin: 30vh;
+}
+
+.SiemAppWelcome {
+  h2, h3 {
+    margin: 2rem 0;
+    font-family: CharlieBrownM54, Helvetica Neue, Helvetica, Arial;
+  }
+}
+
+.sm-welcome-links {
+  text-align: center;
+  display: inline-block;
+  //margin-top: 2rem;
+}
+
+.sm-welcome-link {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+.dashboard-preview-wrapper {
+  display: inline-block;
+  width: 12vw;
+  margin: 1rem 1.5rem;
+  dynamic-iframe {
+    display: block;
+    overflow: hidden;
+    height: 20rem;
+  }
+  iframe {
+    width: 200%;
+    height: 200%;
+    overflow: scroll;
+    border: 2px solid #c3c3c3;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+}
+
+.dashboard-preview {
+}
+
+.welcome-wrapper {
+  position: absolute;
+  top: 50px;
+  //bottom: 50px;
+  width: 100%;
+  height: calc(100% - 100px);
+}
+
+.welcome-right-links {
+  width: 30vw;
+  text-align: right;
+  float: right;
+}
+
+.welcome-left-links {
+  float: left;
+  width: 30vw;
+  margin-bottom: 50px;
+}
+
+.welcome-container {
+  margin: 0 30vw;
+  text-align: center;
+  .siem-logo {
+    max-width: 280px;
+    margin-top: 5rem;
+  }
+  .sm-welcome-links {
+    img {
+      width: 30vw;
+    }
+  }
+}
+
+.footer-wrapper {
+  height: 50px;
+  margin: 0;
+  background: #6fb14e;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-copyrights {
+  display: block;
+  padding: 0 20px;
+  float: right;
+  height: inherit;
+  position: relative;
+  line-height: 4.8rem;
+  color: #F7FFF7;
+}
+
+.page {
+  padding-top: 50px;
+}
